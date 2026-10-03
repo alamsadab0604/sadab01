@@ -162,10 +162,29 @@ Email pehle isliye nikalte hain taaki `rahul123@gmail.com` jaise email ke andar 
 
 ---
 
+## Code poora copy karne ka sahi tarika
+
+Haath se select karke copy karne par code aksar aadha reh jaata hai. Isliye:
+
+- **Ek file:** GitHub par file kholo → upar right me **Copy raw file** icon (2 dabbe wala) dabao → VS Code me file ka purana code `Cmd + A` (Windows: `Ctrl + A`) se select karke paste karo
+- **Saari files ek saath:** repo page par branch chuno → hare **Code** button → **Download ZIP** → unzip karke folder VS Code me kholo
+
+Check karo ki file poori aayi ya nahi. Har file ka **aakhri hissa** aisa hona chahiye:
+
+| File | Last lines | Lagbhag lines |
+|---|---|---|
+| `index.html` | `<script src="js/script.js"></script>` `</body>` `</html>` | 124 |
+| `css/style.css` | `.buttons .btn { flex: 1 1 100%; }` aur phir `}` | 298 |
+| `js/script.js` | `renderAll();` | 298 |
+
+---
+
 ## Common galtiyan aur solution
 
 | Problem | Wajah | Solution |
 |---|---|---|
+| Sirf purple header sundar dikhe, baaki sab plain, aur page "Total Contacts" par khatam | `index.html` aur `style.css` poori copy nahi hui | Upar wale tarike se dono files dobara poori copy karo |
+| Ek CSS rule ke baad baaki design kaam na kare | Kahin `}` chhoot gaya hai | VS Code me neeche **Problems** tab (`Cmd + Shift + M`) dekho, red line wali jagah theek karo |
 | CSS apply nahi ho raha | `href` ka path galat hai | `href="css/style.css"`. Folder aur file ka naam exactly same ho |
 | Button click par kuch nahi hota | `script.js` link nahi hua ya `id` galat hai | `<script src="js/script.js">` body ke end me ho, aur `id` HTML aur JS dono me same ho |
 | Error dekhna hai | | Browser me `Cmd + Option + I` (Mac) / `F12` (Windows) → **Console** tab |
