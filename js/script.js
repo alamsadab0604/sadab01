@@ -70,7 +70,7 @@ function cleanPhone(rawPhone) {
 function cleanName(rawName) {
     let name = rawName
         .replace(LABEL_PATTERN, " ")
-        .replace(/[^A-Za-zऀ-ॿ.' ]/g, " ")
+        .replace(/[^A-Za-z\u0900-\u097F.' ]/g, " ")
         .replace(/\s+/g, " ")
         .trim();
 
@@ -247,7 +247,7 @@ function downloadCSV() {
     contacts.forEach((c) => rows.push([c.name, c.phone, c.email]));
 
     const csvText = rows.map((row) => row.map(toCell).join(",")).join("\n");
-    const blob = new Blob(["﻿" + csvText], { type: "text/csv;charset=utf-8" });
+    const blob = new Blob(["\uFEFF" + csvText], { type: "text/csv;charset=utf-8" });
 
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
