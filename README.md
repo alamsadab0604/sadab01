@@ -153,12 +153,15 @@ Email pehle isliye nikalte hain taaki `rahul123@gmail.com` jaise email ke andar 
 
 ### Step H: Internet par live karo (GitHub Pages, free)
 
-1. Saari files GitHub repo me push karo (yeh repo: `alamsadab0604/sadab01`)
-2. GitHub par repo kholo → **Settings** → left me **Pages**
-3. **Source**: `Deploy from a branch`
-4. **Branch**: woh branch chuno jisme `index.html` hai, folder `/ (root)` → **Save**
-5. 1-2 minute baad website yahan live hogi:
-   `https://alamsadab0604.github.io/sadab01/`
+Bina koi command chalaye, sirf browser se:
+
+1. **Repo banao:** github.com par login → upar right **+** → **New repository** → naam `contact-separator` → **Public** chuno (free Pages ke liye zaroori) → baaki sab khaali chhodo → **Create repository**
+2. **Files upload karo:** naye repo page par **"uploading an existing file"** link dabao → Finder me project folder kholo, andar ka sab kuch select karo (`Cmd + A`) aur drag karo. Isme `index.html`, CSS/JS files (ya `css`, `js` folders) aur `README.md` aa jayenge. Bahar wala project folder khud drag mat karo, warna `index.html` uske andar chali jayegi → neeche **Commit changes**
+3. **Pages on karo:** repo me **Settings** → left me **Pages** → **Source**: `Deploy from a branch` → **Branch**: `main` aur `/ (root)` → **Save**
+4. **Link kholo:** 1-2 minute baad Pages wale page ko refresh karo. Upar link aayega:
+   `https://<aapka-username>.github.io/contact-separator/`
+
+Baad me kuch badalna ho: VS Code me change karo → repo me **Add file → Upload files** se wahi file dobara upload karo → **Commit changes**. 1-2 minute me website update ho jayegi.
 
 ---
 
@@ -189,4 +192,5 @@ Check karo ki file poori aayi ya nahi. Har file ka **aakhri hissa** aisa hona ch
 | Button click par kuch nahi hota | `script.js` link nahi hua ya `id` galat hai | `<script src="js/script.js">` body ke end me ho, aur `id` HTML aur JS dono me same ho |
 | Error dekhna hai | | Browser me `Cmd + Option + I` (Mac) / `F12` (Windows) → **Console** tab |
 | Live Server ka button nahi dikh raha | Extension install nahi hai ya folder open nahi kiya | **File → Open Folder** se poora folder kholo, sirf file nahi |
-| GitHub Pages par 404 | `index.html` root me nahi hai | `index.html` ko folder ke bahar (root me) rakho |
+| GitHub Pages par 404 | `index.html` root me nahi hai (shayad poora folder upload ho gaya) | Repo kholo: files seedhe dikhni chahiye, kisi folder ke andar nahi. Folder ki jagah sirf files upload karo |
+| Live site par design/buttons kaam na karein | `style.css` ya `script.js` upload nahi hui, ya naam alag hai | Teeno files repo me hain ya nahi dekho. Naam bilkul wahi ho jo `index.html` me likha hai |
