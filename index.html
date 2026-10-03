@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Data Separator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ===== Header ===== -->
+    <header class="header">
+        <h1>Contact Data Separator</h1>
+        <p>Mixed contact data paste karo. Name, Phone aur Email alag-alag variables me separate ho jayenge.</p>
+    </header>
+
+    <main class="container">
+        <!-- ===== Step 1: Data input ===== -->
+        <section class="card">
+            <h2>1. Data Paste Karo</h2>
+            <p class="hint">
+                Har line me ek contact likho. Example:
+                <code>Rahul Sharma, 9876543210, rahul@gmail.com</code>
+            </p>
+
+            <textarea id="rawData" rows="8" placeholder="Rahul Sharma, 9876543210, rahul@gmail.com&#10;Priya Singh | priya@yahoo.com | +91 98765 43211"></textarea>
+
+            <div class="buttons">
+                <button id="separateBtn" class="btn btn-primary">Separate Karo</button>
+                <button id="sampleBtn" class="btn">Sample Data</button>
+                <button id="clearBtn" class="btn btn-danger">Clear</button>
+            </div>
+
+            <p id="message" class="message"></p>
+        </section>
+
+        <!-- ===== Step 2: Summary boxes ===== -->
+        <section class="stats">
+            <div class="stat">
+                <span id="totalCount" class="stat-number">0</span>
+                <span class="stat-label">Total Contacts</span>
+            </div>
+            <div class="stat">
+                <span id="phoneCount" class="stat-number">0</span>
+                <span class="stat-label">Phone Numbers</span>
+            </div>
+            <div class="stat">
+                <span id="emailCount" class="stat-number">0</span>
+                <span class="stat-label">Emails</span>
+            </div>
+            <div class="stat">
+                <span id="missingCount" class="stat-number">0</span>
+                <span class="stat-label">Incomplete</span>
+            </div>
+        </section>
+
+        <!-- ===== Step 3: Table ===== -->
+        <section class="card">
+            <div class="card-title">
+                <h2>2. Separated Table</h2>
+                <button id="downloadBtn" class="btn btn-small">Download CSV</button>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultBody">
+                        <tr>
+                            <td colspan="4" class="empty">Abhi koi data nahi hai.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===== Step 4: Alag-alag lists ===== -->
+        <section class="lists">
+            <div class="card list-box">
+                <div class="card-title">
+                    <h3>Names</h3>
+                    <button class="btn btn-small" data-copy="names">Copy</button>
+                </div>
+                <ul id="nameList"></ul>
+            </div>
+
+            <div class="card list-box">
+                <div class="card-title">
+                    <h3>Phones</h3>
+                    <button class="btn btn-small" data-copy="phones">Copy</button>
+                </div>
+                <ul id="phoneList"></ul>
+            </div>
+
+            <div class="card list-box">
+                <div class="card-title">
+                    <h3>Emails</h3>
+                    <button class="btn btn-small" data-copy="emails">Copy</button>
+                </div>
+                <ul id="emailList"></ul>
+            </div>
+        </section>
+
+        <!-- ===== Step 5: Variable view ===== -->
+        <section class="card">
+            <h2>3. JavaScript Variables Me Data</h2>
+            <p class="hint">Yeh dikhata hai ki separate hone ke baad data JavaScript variables me kaise store hota hai.</p>
+            <pre id="variableView" class="code">let contacts = [];</pre>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>HTML + CSS + JavaScript se bana hua project</p>
+    </footer>
+
+    <!-- JavaScript hamesha body ke end me, taaki HTML pehle load ho jaye -->
+    <script src="js/script.js"></script>
+</body>
+</html>
